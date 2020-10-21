@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+phases (water air);
+
+water
+{
+    transportModel  Newtonian;
+    nu		    1.3463e-06;
+    rho		    1027.4;
+}
+
+air
+{
+    transportModel  Newtonian;
+    nu		    1e-06;
+    rho		    997;
+}
+
+sigma            0.00;
+
+// ************************************************************************* //
+// nu		kinematic viscosity	m**2/s
+// rho		density			kg/m**3
+// sigma	surface tension		N/m
+//
+//water
+//  nu		1e-06		
+//  rho		997
+//
+//glycerol	
+//  nu		8.56e-04	thesis
+//  nu		1139e-06	github
+//  rho		1260
+//
+//air
+//  nu		1.48e-05
+//  rho		1
+//
+//sigma
+//  water_air	0.07
+//  miscible	0.00
